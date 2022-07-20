@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { FaTwitter, FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa";
 
-
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
@@ -44,7 +43,6 @@ export const Footer = () => {
   return (
     <>
       <Box p="2rem" backgroundColor={"#F7F8F9"}>
-        {" "}
         <SimpleGrid columns={{ base: 1, sm: 1, md: 3 }} spacing={8}>
           <Stack align={"flex-start"}>
             <Image src="https://statics.olx.in/external/base/img/phone-app.webp" />
