@@ -34,7 +34,7 @@ export const Navbarfirst = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              {/* <a className="nav-link" href="#"> */}
                 <select class="custom-select custom-select-lg mb-3" style={{width:'250px'}}>
                   <option selected>India</option>
                   <option value="1">Maharshtra</option>
@@ -42,7 +42,7 @@ export const Navbarfirst = () => {
                   <option value="3">Goa</option>
                   <option value="3">Kernatak</option>
                 </select>
-              </a>
+              {/* </a> */}
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
