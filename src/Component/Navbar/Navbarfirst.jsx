@@ -11,12 +11,13 @@ import {
   ModalHeader,
   ModalOverlay,
   useDisclosure,
-  VStack,Text
+  VStack,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import { FiSearch, FiPlus } from "react-icons/fi";
-import {BsPhone } from 'react-icons/bs'
-import {AiOutlineGoogle} from 'react-icons/ai'
+import { BsPhone } from "react-icons/bs";
+import { AiOutlineGoogle } from "react-icons/ai";
 export const Navbarfirst = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -145,35 +146,50 @@ export const Navbarfirst = () => {
                     <ModalHeader>Create your account</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                      <Box width={'100%'} >
-                        <Button width={'100%'} textAlign="center" colorScheme='teal' variant='outline'> 
-                        <BsPhone /> Continue With Phone
+                      <Box width={"100%"}>
+                        <Button
+                          width={"100%"}
+                          textAlign="center"
+                          colorScheme="teal"
+                          variant="outline"
+                        >
+                          <BsPhone /> Continue With Phone
                         </Button>
-                        <Button my={'20px'} width={'100%'} colorScheme='teal' variant='outline'> 
-                        <AiOutlineGoogle />  Continue With Google
+                        <Button
+                          my={"20px"}
+                          width={"100%"}
+                          colorScheme="teal"
+                          variant="outline"
+                        >
+                          <AiOutlineGoogle /> Continue With Google
                         </Button>
                       </Box>
                       <Container mb="100px">
                         <VStack>
-                        <Heading  size="xs">
-                          OR
-                          </Heading>
-                          <Heading   size="xs" textAlign={'center'}>
+                          <Heading size="xs">OR</Heading>
+                          <Heading size="xs" textAlign={"center"}>
                             Login with Email
                           </Heading>
                         </VStack>
                       </Container>
                       <Container>
                         <VStack>
-                        
-                          <Heading   size="xs" fontWeight="400">
+                          <Heading size="xs" fontWeight="400">
                             All your personal details are safe with us.
                           </Heading>
-                          <Heading  size="xs" textAlign={'center'} fontWeight="400">
-                            If you continue, you are accepting 
-                            <Text  color={'blue'} size="xs" textAlign={'center'} fontWeight="400">
-                            OLX Terms and
-                            Conditions and Privacy Policy
+                          <Heading
+                            size="xs"
+                            textAlign={"center"}
+                            fontWeight="400"
+                          >
+                            If you continue, you are accepting
+                            <Text
+                              color={"blue"}
+                              size="xs"
+                              textAlign={"center"}
+                              fontWeight="400"
+                            >
+                              OLX Terms and Conditions and Privacy Policy
                             </Text>
                           </Heading>
                         </VStack>
@@ -188,7 +204,7 @@ export const Navbarfirst = () => {
                 leftIcon={<FiPlus />}
                 borderRadius="20px"
                 colorScheme="light"
-                color={'#000'}
+                color={"#000"}
                 variant="solid"
                 marginLeft={"20px"}
                 width="90px"
