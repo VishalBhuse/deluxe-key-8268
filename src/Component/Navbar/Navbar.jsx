@@ -1,5 +1,5 @@
-import { Box, Image } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const NavbarSecond = () => {
   const jobs = [
@@ -60,16 +60,21 @@ export const NavbarSecond = () => {
     "Other Services",
   ];
 
-
   return (
     <div>
-      <nav className="navbar navbar-expand-lg  shadow-sm">
-        <a
-          href="kk#"
+      <nav
+        className="navbar navbar-expand-lg  shadow-sm"
+        style={{
+          boxShadow:
+            "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+        }}
+      >
+        <Link
+          to="/"
           className="navbar-brand font-weight-bold d-block d-lg-none"
         >
           All Categories
-        </a>
+        </Link>
         <button
           type="button"
           data-toggle="collapse"
@@ -84,16 +89,16 @@ export const NavbarSecond = () => {
         <div id="navbarContent" className="collapse navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item dropdown megamenu onlelinehead">
-              <a
+              <Link
                 id="megamneu"
-                href="kk"
+                to="/"
                 data-toggle="dropdown"
                 // aria-haspopup="true"
                 aria-expanded="false"
                 className="nav-link dropdown-toggle font-weight-bold text-uppercase"
               >
                 All Categories
-              </a>
+              </Link>
               <div
                 aria-labelledby="megamneu"
                 className="dropdown-menu border-0 p-0 m-0"
@@ -104,141 +109,130 @@ export const NavbarSecond = () => {
                       <div className="p-4">
                         <div className="row">
                           <div className="col-lg-6 mb-4">
-                            <h6 className="h6heading">
-                              OLX Autos (Cars)
-                            </h6>
-                            <h6 className=" mt-5 h6heading">
-                              Properties
-                            </h6>
+                            <h6 className="h6heading">OLX Autos (Cars)</h6>
+                            <h6 className=" mt-5 h6heading">Properties</h6>
                             <ul className="list-unstyled">
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/product/6"
                                   className="nav-link text-small pb-0"
                                 >
                                   For Sale: Houses & Apartments
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/product/6"
                                   className="nav-link text-small pb-0"
                                 >
                                   For Rent: Houses & Apartments
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/product/6"
                                   className="nav-link text-small pb-0"
                                 >
                                   Lands & Plots
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/product/6"
                                   className="nav-link text-small pb-0"
                                 >
                                   For Rent: Shops & Offices
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/product/6"
                                   className="nav-link text-small pb-0"
                                 >
                                   For Sale: Shops & Offices
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/product/6"
                                   className="nav-link text-small pb-0"
                                 >
                                   PG & Guest Houses
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                             <div className="row">
-                            <div className="col-12 mt-5">
-                            <h6 className="h6heading">Mobiles</h6>
-                            <ul className="list-unstyled">
-                              <li className="nav-item">
-                                <a
-                                  href="kk"
-                                  className="nav-link text-small pb-0 "
-                                >
-                                  Mobile Phones
-                                </a>
-                              </li>
-                              <li className="nav-item">
-                                <a
-                                  href="kk"
-                                  className="nav-link text-small pb-0 "
-                                >
-                                  Accessories
-                                </a>
-                              </li>
-                              <li className="nav-item">
-                                <a
-                                  href="kk"
-                                  className="nav-link text-small pb-0 "
-                                >
-                                  Tablets
-                                </a>
-                              </li>
-                              <li className="nav-item">
-                                <a
-                                  href="kk"
-                                  className="nav-link text-small pb-0 "
-                                >
-                                  Account
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-
+                              <div className="col-12 mt-5">
+                                <h6 className="h6heading">Mobiles</h6>
+                                <ul className="list-unstyled">
+                                  <li className="nav-item">
+                                    <Link
+                                      to="/product/2"
+                                      className="nav-link text-small pb-0 "
+                                    >
+                                      Mobile Phones
+                                    </Link>
+                                  </li>
+                                  <li className="nav-item">
+                                    <Link
+                                      to="/product/6"
+                                      className="nav-link text-small pb-0 "
+                                    >
+                                      Accessories
+                                    </Link>
+                                  </li>
+                                  <li className="nav-item">
+                                    <Link
+                                      to="/product/6"
+                                      className="nav-link text-small pb-0 "
+                                    >
+                                      Tablets
+                                    </Link>
+                                  </li>
+                                  <li className="nav-item">
+                                    <Link
+                                      to="/"
+                                      className="nav-link text-small pb-0 "
+                                    >
+                                      Account
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
                           <div className="col-lg-6 mb-4">
-                            <h6 className=" h6heading">
-                              Jobs
-                            </h6>
+                            <h6 className=" h6heading">Jobs</h6>
                             <ul className="list-unstyled">
                               {jobs.map((links) => (
                                 <li className="nav-item" key={links}>
-                                  <a
-                                    href="kk"
+                                  <Link
+                                    to="/"
                                     className="nav-link text-small pb-0 "
                                   >
                                     {links}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                             <div className="row">
-                            <div className="col-12 mt-4">
-                            <h6 className="h6heading">
-                              Bikes
-                            </h6>
-                            <ul className="list-unstyled">
-                              {bikes.map((links) => (
-                                <li className="nav-item" key={links}>
-                                  <a
-                                    href="kk"
-                                    className="nav-link text-small pb-0 "
-                                  >
-                                    {links}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
+                              <div className="col-12 mt-4">
+                                <h6 className="h6heading">Bikes</h6>
+                                <ul className="list-unstyled">
+                                  {bikes.map((links) => (
+                                    <li className="nav-item" key={links}>
+                                      <Link
+                                        to="/"
+                                        className="nav-link text-small pb-0 "
+                                      >
+                                        {links}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                      
                         </div>
                       </div>
                     </div>
@@ -252,44 +246,42 @@ export const NavbarSecond = () => {
                             <ul className="list-unstyled">
                               {electronic.map((links) => (
                                 <li className="nav-item" key={links}>
-                                  <a
-                                    href="kk"
+                                  <Link
+                                    to="/"
                                     className="nav-link text-small pb-0 "
                                   >
                                     {links}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div className="col-lg-6 mb-4">
-                            <h6 className="h6heading">
-                              Fashion
-                            </h6>
+                            <h6 className="h6heading">Fashion</h6>
                             <ul className="list-unstyled">
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/"
                                   className="nav-link text-small pb-0 "
                                 >
                                   Men
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/"
                                   className="nav-link text-small pb-0 "
                                 >
                                   Women
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/"
                                   className="nav-link text-small pb-0 "
                                 >
                                   Kids
-                                </a>
+                                </Link>
                               </li>
                             </ul>
 
@@ -301,12 +293,12 @@ export const NavbarSecond = () => {
                                 <ul className="list-unstyled">
                                   {books.map((links) => (
                                     <li className="nav-item" key={links}>
-                                      <a
-                                        href="kk"
+                                      <Link
+                                        to="/"
                                         className="nav-link text-small pb-0 "
                                       >
                                         {links}
-                                      </a>
+                                      </Link>
                                     </li>
                                   ))}
                                 </ul>
@@ -319,20 +311,20 @@ export const NavbarSecond = () => {
                             </h6>
                             <ul className="list-unstyled">
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/"
                                   className="nav-link text-small pb-0 "
                                 >
                                   Commercial & Other Vehicles
-                                </a>
+                                </Link>
                               </li>
                               <li className="nav-item">
-                                <a
-                                  href="kk"
+                                <Link
+                                  to="/"
                                   className="nav-link text-small pb-0 "
                                 >
                                   Spare Parts
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                           </div>
@@ -341,46 +333,42 @@ export const NavbarSecond = () => {
                             <ul className="list-unstyled">
                               {pets.map((links) => (
                                 <li className="nav-item" key={links}>
-                                  <a
-                                    href="kk"
+                                  <Link
+                                    to="/"
                                     className="nav-link text-small pb-0 "
                                   >
                                     {links}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}{" "}
                             </ul>
                           </div>
                           <div className="col-lg-6 mb-4">
-                            <h6 className="h6heading">
-                              Furniture
-                            </h6>
+                            <h6 className="h6heading">Furniture</h6>
                             <ul className="list-unstyled">
                               {furniture.map((links) => (
                                 <li className="nav-item" key={links}>
-                                  <a
-                                    href="kk"
+                                  <Link
+                                    to="/"
                                     className="nav-link text-small pb-0 "
                                   >
                                     {links}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div className="col-lg-6 mb-4">
-                            <h6 className="h6heading">
-                              Services
-                            </h6>
+                            <h6 className="h6heading">Services</h6>
                             <ul className="list-unstyled">
                               {services.map((links) => (
                                 <li className="nav-item" key={links}>
-                                  <a
-                                    href="kk"
+                                  <Link
+                                    to="/"
                                     className="nav-link text-small pb-0 "
                                   >
                                     {links}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -393,46 +381,43 @@ export const NavbarSecond = () => {
               </div>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/0" className="nav-link onlelinehead">
                 Cars
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/1" className="nav-link onlelinehead">
                 Motorcycle
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/2" className="nav-link onlelinehead">
                 Mobile Phones
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/3" className="nav-link onlelinehead">
                 For Sale: Houses & Apartments
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/4" className="nav-link onlelinehead">
                 Scooters
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/5" className="nav-link onlelinehead">
                 Commercial & Other Vehicles
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="kk" className="nav-link onlelinehead">
+              <Link to="/product/6" className="nav-link onlelinehead">
                 For Rent: Houses & Apartments
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
-      <Box>
-        <Image  height={'130px'} src="https://statics.olx.in/olxin/banners/hero_bg_in_v2@1x.png" />
-      </Box>
     </div>
   );
 };

@@ -8,12 +8,12 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 import "swiper/css/navigation";
 import { Box, Container, HStack, Image, Text } from "@chakra-ui/react";
-
+import {Link }from 'react-router-dom';
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper";
 
-export default function Slider() {
+export default function Slider({texts, bgs}) {
   const slideData = [
     {
       id: 1,
@@ -102,11 +102,11 @@ export default function Slider() {
   ];
   return (
     <>
-      <Container maxW="container.xl" bg="#EBEEEF" mt="10vh">
+      <Container maxW="container.xl"  bg={bgs} mt="10vh">
         <br />
         <HStack alignItems={"flex-start"} justifyContent="space-between">
           <Text fontSize={"25px"} mb="1rem ">
-            More on Mobile Phones
+           {texts}
           </Text>
           <Text
             fontSize={"15px"}
@@ -114,7 +114,9 @@ export default function Slider() {
             fontWeight={"600"}
             mb="1rem "
           >
+            <Link to="/product/6">
             view more
+            </Link>
           </Text>
         </HStack>
 

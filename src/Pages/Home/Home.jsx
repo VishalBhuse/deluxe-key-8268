@@ -14,6 +14,7 @@ import Slider from "./Slider";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const [data, setdata] = useState([]);
@@ -31,7 +32,10 @@ export const Home = () => {
 
   return (
     <>
-      <Slider />
+    <Box>
+        <Image  height={'130px'} src="https://statics.olx.in/olxin/banners/hero_bg_in_v2@1x.png" />
+      </Box>
+      <Slider texts={' More on Mobile Phones'} bgs={'#EBEEEF'} />
 
       <Box m={"1rem 0px"}>
         <Container maxW="90%" mt="10vh" mb="1rem">
@@ -46,7 +50,9 @@ export const Home = () => {
               fontWeight={"600"}
               mb="1rem "
             >
+              <Link to='/product/3'>
               view more
+              </Link>
             </Text>
           </HStack>
 
@@ -102,18 +108,18 @@ export const Home = () => {
                   />
                   <Box textAlign={"left"}>
                     <Text fontWeight={"700"} mt="8px">
-                      {item._89yzn}
+                      {item.price}
                     </Text>
                     <Text fontSize={"13px"} color="rgba(0, 47, 52, 0.64)">
-                      {item._2tW1I}
+                      {item.text1}
                     </Text>
                     <HStack
                       justifyContent={"space-between"}
                       color={"rgba(0, 47, 52, 0.64)"}
                       fontSize="13px"
                     >
-                      <Text>{item.tjgMj}</Text>
-                      <Text>{item.zLvFQ}</Text>
+                      <Text>{item.text3}</Text>
+                      <Text>{item.day}</Text>
                     </HStack>
                   </Box>
                 </Box>
