@@ -29,30 +29,51 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { Filter } from "./Filterdata";
 export const Product = () => {
-  const [cars, setcars] = useState([]);
+  const [productdata, setproductdata] = useState([]);
   const [loading, setloading] = useState(true);
   const [limit, setlimit] = useState(21);
+  const [sort, setsort] = useState("");
+  const [relaod, setrelaod] = useState("");
   const { id } = useParams();
+
   const pageroute = [
-    "cars",
-    "motorcycles",
-    "mobile",
-    "house",
-    "scooter",
-    "commercial",
-    "rent",
+    "tempcar",
+    "tempmotorcycle",
+    "tempmobile",
+    "temphouse",
+    "tempscooter",
+    "tempcommercial",
+    "temprent",
   ];
   useEffect(() => {
     axios
       .get(`http://localhost:8080/${pageroute[id]}?_limit=${limit}`)
       .then((r) => {
-        setcars(r.data);
+        setproductdata(r.data);
         setloading(false);
       });
     return () => {
       setloading(true);
     };
   }, [limit, id]);
+
+  useEffect(() => {
+    if (sort === "lth") {
+      productdata.sort(
+        (a, b) => a.price.replace(/,/g, "") - b.price.replace(/,/g, "")
+      );
+      console.log(productdata);
+      setproductdata(productdata);
+      setrelaod(Date.now());
+    } else if (sort === "htl") {
+      productdata.sort(
+        (a, b) => b.price.replace(/,/g, "") - a.price.replace(/,/g, "")
+      );
+      console.log(productdata);
+      setproductdata(productdata);
+      setrelaod(Date.now());
+    }
+  }, [sort]);
 
   const [sliderValue, setSliderValue] = useState(50);
 
@@ -64,8 +85,8 @@ export const Product = () => {
 
   return (
     <Box w="95%" m="10px auto">
-      <HStack alignItems={"flex-start"}>
-        <Box w="30%">
+      <HStack w="100%" flexWrap={"wrap"} alignItems={"flex-start"}>
+        <Box w={["100%", "100%", "30%"]}>
           <Box mt={5}>
             <Heading size="sm" mb={2}>
               Used In India
@@ -90,7 +111,7 @@ export const Product = () => {
                       overflowX="auto"
                     >
                       {obj.Sub.map((item, index) => (
-                        <HStack>
+                        <HStack key={index}>
                           <BsDashLg />
                           <Text>{item}</Text>
                         </HStack>
@@ -151,18 +172,24 @@ export const Product = () => {
             </AccordionItem>
           </Accordion>
         </Box>
-        <Box w="70%">
-          <HStack justifyContent={"space-between"}>
+        <Box w={["100%", "100%", "69%"]}>
+          <HStack justifyContent={"space-between"} mb="1rem">
             <Text fontSize={"13px"}>
               {(Math.random() * 132444773).toFixed(0)} ads in <b>India </b>{" "}
             </Text>
             <Box w="25%">
               <HStack>
-                <Select variant="unstyled" placeholder="Sort By">
-                  <option value="date">Date Published</option>
-                  <option value="relevance">Relevance</option>
+                <Select
+                  variant="unstyled"
+                  placeholder="Sort By"
+                  onChange={(e) => {
+                    setsort(e.target.value);
+                  }}
+                >
                   <option value="lth">Price: Low to High</option>
                   <option value="htl">Price: Hight to Low </option>
+                  <option value="date">Date Published</option>
+                  <option value="relevance">Relevance</option>
                   <option value="distance">Distance</option>
                 </Select>
               </HStack>
@@ -199,18 +226,18 @@ export const Product = () => {
             </SimpleGrid>
           ) : (
             <SimpleGrid columns={[1, 2, 3]} spacing={3}>
-              {cars.map((cars, i) => (
+              {productdata.map((cars, i) => (
                 <Box
+                  key={cars.id}
                   boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px"}
-                  borderRadius="5 px"
+                  borderRadius="5px"
                   height="auto"
-                  key={i + 1}
                   p="1rem 1rem 5px 1rem"
                 >
                   <AiOutlineHeart
                     style={{ float: "right", fontSize: "25px" }}
                   />
-                  <Link to="/singleprod/:id">
+                  <Link to={`/singleprod/${id}/${i}`}>
                     <Image
                       width={"auto"}
                       m="auto"
@@ -219,16 +246,18 @@ export const Product = () => {
                     />
                     <Box textAlign={"left"}>
                       <Text fontWeight={"700"} mt="8px">
-                        {cars.price}
+                        ₹ {cars.price}
                       </Text>
                       <Text fontSize={"13px"} color="rgba(0, 47, 52, 0.64)">
                         {cars.text1}
                       </Text>
-                      <Text fontSize={"13px"}>{cars.text2}</Text>
+                      <Text fontSize={"13px"} 
+                        fontWeight={'600'}>{cars.text2}</Text>
                       <HStack
                         justifyContent={"space-between"}
                         color={"rgba(0, 47, 52, 0.64)"}
                         fontSize="11px"
+                        fontWeight={'600'}
                       >
                         <Text>{cars.text3}</Text>
                         <Text>{cars.day}</Text>
