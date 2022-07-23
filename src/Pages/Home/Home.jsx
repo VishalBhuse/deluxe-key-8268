@@ -32,10 +32,13 @@ export const Home = () => {
 
   return (
     <>
-    <Box>
-        <Image  height={'130px'} src="https://statics.olx.in/olxin/banners/hero_bg_in_v2@1x.png" />
+      <Box>
+        <Image
+          height={"130px"}
+          src="https://statics.olx.in/olxin/banners/hero_bg_in_v2@1x.png"
+        />
       </Box>
-      <Slider texts={' More on Mobile Phones'} bgs={'#EBEEEF'} />
+      <Slider texts={" More on Mobile Phones"} bgs={"#EBEEEF"} />
 
       <Box m={"1rem 0px"}>
         <Container maxW="90%" mt="10vh" mb="1rem">
@@ -50,15 +53,13 @@ export const Home = () => {
               fontWeight={"600"}
               mb="1rem "
             >
-              <Link to='/product/3'>
-              view more
-              </Link>
+              <Link to="/product/3">view more</Link>
             </Text>
           </HStack>
 
           {loading ? (
             <>
-              <SimpleGrid columns={[1, 2, 2, 4]} spacing={10}>
+              <SimpleGrid columns={[1, 1, 2, 2, 4]} spacing={10}>
                 <Box w="100%" h="400">
                   <Skeleton height="400px" />
                 </Box>
@@ -87,41 +88,47 @@ export const Home = () => {
               </SimpleGrid>
             </>
           ) : (
-            <SimpleGrid columns={[1, 2, 2, 4]} spacing={5}>
+            <SimpleGrid columns={[1, 1, 2, 2, 4]} spacing={5}>
               {data.map((item, i = 1) => (
                 <Box
                   border={"1px solid #CFCDCD"}
                   borderRadius="5 px"
-                  height="auto"
+                  flexWrap={"wrap"}
+                  h={"auto"}
                   key={i + 1}
                   p="1rem 1rem 5px 1rem"
                 >
-                  <AiOutlineHeart
-                    style={{ float: "right", fontSize: "25px" }}
-                  />
-                  <Image
-                    width={"50%"}
-                    m="auto"
-                    height="30vh"
-                    src={item.imgurl + item.imgurl1}
-                    // src={item.imgurl1}
-                  />
-                  <Box textAlign={"left"}>
-                    <Text fontWeight={"700"} mt="8px">
-                      {item.price}
-                    </Text>
-                    <Text fontSize={"13px"} color="rgba(0, 47, 52, 0.64)">
-                      {item.text1}
-                    </Text>
-                    <HStack
-                      justifyContent={"space-between"}
-                      color={"rgba(0, 47, 52, 0.64)"}
-                      fontSize="13px"
-                    >
-                      <Text>{item.text3}</Text>
-                      <Text>{item.day}</Text>
-                    </HStack>
-                  </Box>
+                  <Link to={"/product/0"}>
+                    <AiOutlineHeart
+                      style={{ float: "right", fontSize: "25px" }}
+                    />
+                    <Image
+                      width={"50%"}
+                      m="auto"
+                      height="30vh"
+                      src={item.imgurl + item.imgurl1}
+                    />
+                    <Box textAlign={"left"}>
+                      <Text fontWeight={"700"} mt="8px">
+                        ₹ {item.price}
+                      </Text>
+                      <Text
+                        fontSize={"13px"}
+                        color="rgba(0, 47, 52, 0.64)"
+                        noOfLines={2}
+                      >
+                        {item.text1}
+                      </Text>
+                      <HStack
+                        justifyContent={"space-between"}
+                        color={"rgba(0, 47, 52, 0.64)"}
+                        fontSize="13px"
+                      >
+                        <Text>{item.text3}</Text>
+                        <Text>{item.day}</Text>
+                      </HStack>
+                    </Box>
+                  </Link>
                 </Box>
               ))}
             </SimpleGrid>
@@ -141,11 +148,10 @@ export const Home = () => {
             }}
             p={"15px 10px"}
             height={"50px"}
-            backgroundColor={'#fff'}
-            border={'2px solid #000'}
+            backgroundColor={"#fff"}
+            border={"2px solid #000"}
             _hover={{ border: "5px solid #000" }}
           >
-            
             Load more
           </Button>
         </Box>

@@ -8,7 +8,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 import "swiper/css/navigation";
 import { Box, Container, HStack, Image, Text } from "@chakra-ui/react";
-import {Link }from 'react-router-dom';
+import {NavLink }from 'react-router-dom';
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper";
@@ -114,9 +114,9 @@ export default function Slider({texts, bgs}) {
             fontWeight={"600"}
             mb="1rem "
           >
-            <Link to="/product/6">
+            <NavLink to="/product/6">
             view more
-            </Link>
+            </NavLink>
           </Text>
         </HStack>
 
@@ -154,14 +154,16 @@ export default function Slider({texts, bgs}) {
         >
           {slideData.map((item) => (
             <SwiperSlide key={item.id}>
+
               <Box
                 border={"1px solid #CFCDCD"}
                 borderRadius="5 px"
                 w="120%"
                 p="10px 10px"
-              >
+                >
+                <NavLink to="/product/1">
                 <AiOutlineHeart style={{ float: "right", fontSize: "25px" }} />
-                <Image width={"50%"} m="auto" height="30vh" src={item.img} />
+                <Image width={"70%"} m="auto" height="30vh" src={item.img} />
                 <Box textAlign={"left"}>
                   <Text fontWeight={"700"} mt="8px">
                     ₹{item.price}
@@ -173,7 +175,9 @@ export default function Slider({texts, bgs}) {
                     {item.days}
                   </Text>
                 </Box>
+              </NavLink>
               </Box>
+
             </SwiperSlide>
           ))}
         </Swiper>

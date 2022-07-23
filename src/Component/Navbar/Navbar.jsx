@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const NavbarSecond = () => {
   const jobs = [
@@ -60,6 +60,14 @@ export const NavbarSecond = () => {
     "Other Services",
   ];
 
+  const baseStyle = {
+    color: "black",
+  };
+
+  const activeStyle = {
+    color: "darkcyan",
+  };
+
   return (
     <div>
       <nav
@@ -69,12 +77,12 @@ export const NavbarSecond = () => {
             "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
         }}
       >
-        <Link
+        <NavLink
           to="/"
           className="navbar-brand font-weight-bold d-block d-lg-none"
         >
           All Categories
-        </Link>
+        </NavLink>
         <button
           type="button"
           data-toggle="collapse"
@@ -89,7 +97,7 @@ export const NavbarSecond = () => {
         <div id="navbarContent" className="collapse navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item dropdown megamenu onlelinehead">
-              <Link
+              <NavLink
                 id="megamneu"
                 to="/"
                 data-toggle="dropdown"
@@ -98,7 +106,7 @@ export const NavbarSecond = () => {
                 className="nav-link dropdown-toggle font-weight-bold text-uppercase"
               >
                 All Categories
-              </Link>
+              </NavLink>
               <div
                 aria-labelledby="megamneu"
                 className="dropdown-menu border-0 p-0 m-0"
@@ -222,7 +230,7 @@ export const NavbarSecond = () => {
                                   {bikes.map((links) => (
                                     <li className="nav-item" key={links}>
                                       <Link
-                                        to="/"
+                                        to="/product/1"
                                         className="nav-link text-small pb-0 "
                                       >
                                         {links}
@@ -349,7 +357,7 @@ export const NavbarSecond = () => {
                               {furniture.map((links) => (
                                 <li className="nav-item" key={links}>
                                   <Link
-                                    to="/"
+                                    to="/product/6"
                                     className="nav-link text-small pb-0 "
                                   >
                                     {links}
@@ -381,39 +389,67 @@ export const NavbarSecond = () => {
               </div>
             </li>
             <li className="nav-item">
-              <Link to="/product/0" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/0"
+                className="nav-link onlelinehead"
+              >
                 Cars
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product/1" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/1"
+                className="nav-link onlelinehead"
+              >
                 Motorcycle
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product/2" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/2"
+                className="nav-link onlelinehead"
+              >
                 Mobile Phones
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product/3" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/3"
+                className="nav-link onlelinehead"
+              >
                 For Sale: Houses & Apartments
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product/4" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/4"
+                className="nav-link onlelinehead"
+              >
                 Scooters
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product/5" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/5"
+                className="nav-link onlelinehead"
+              >
                 Commercial & Other Vehicles
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product/6" className="nav-link onlelinehead">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
+                to="/product/6"
+                className="nav-link onlelinehead"
+              >
                 For Rent: Houses & Apartments
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

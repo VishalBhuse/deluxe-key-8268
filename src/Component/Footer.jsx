@@ -152,7 +152,7 @@ export const Footer = () => {
               </HStack>
               <br />
               <br />
-              <HStack>
+              <HStack wrap={'wrap'}>
                 <Image src="https://statics.olx.in/external/base/img/playstore.webp" />
                 <Image src="https://statics.olx.in/external/base/img/appstore.webp" />
               </HStack>
