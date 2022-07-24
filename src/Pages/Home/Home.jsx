@@ -150,7 +150,7 @@ export const Home = () => {
             height={"50px"}
             backgroundColor={"#fff"}
             border={"2px solid #000"}
-            _hover={{ border: "5px solid #000" }}
+            _hover={{ border: "3px solid #000" }}
           >
             Load more
           </Button>

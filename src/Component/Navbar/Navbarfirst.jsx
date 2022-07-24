@@ -159,7 +159,7 @@ export const Navbarfirst = () => {
               </div>
             </li>
             <li className="nav-item">
-            <Select placeholder="English"
+            <Select
                 w={['100%','550%','100%','100%','100px',]}
                 border="none"              
                 variant="unstyled"
