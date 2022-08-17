@@ -1,4 +1,29 @@
 
+## Tech Stack
+
+- React,
+- Redux,
+- Chakra UI,
+- Swiper JS,
+- Heroku APi
+
+
+
+## Pages built
+
+**Landing Page**: It contains navbar, dropdown menu, products section, footer.
+
+**Sign in/ Login Section**: For creating and signing an account.
+
+**Products**: It contains different categories.
+
+**Sub Products Page**: It contains different subcategories of particular category.
+
+**Single Product Page**: It contains about us section of website.
+
+**Chat Section**: It contains contact with seller;
+
+## Screenshots
 ### Homepage:-
 
 ![Screenshot (64)](https://user-images.githubusercontent.com/101569259/185156692-b3d691b9-79f5-492f-b1f2-3765b8451a9e.png)
