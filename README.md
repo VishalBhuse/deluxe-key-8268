@@ -1,3 +1,7 @@
+# OLX CLone
+
+Creating clone of OLX platform. OLX makes it so easy to connect people to buy, sell or exchange used goods and services.
+
 
 ## Tech Stack
 
